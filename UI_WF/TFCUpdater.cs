@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Data_Layer.Patcher;
 using Domain;
 using Team_Comtress_Updater;
 using Team_Comtress_Updater.Patch;
@@ -85,18 +86,30 @@ namespace WinFormsApp1
         private void PatchButton_Click(object sender, EventArgs e)
         {
             bool clean = CleanPatchBox.Checked;
-            _patchManager.Init(_configManager.Config.TF2Path,_configManager.Config.TCPath);
-            if (clean)
-            {
-                PatchStatusLabel.Text = "Cleaning installation";
-                _patchManager.Clean();
-            }
-            PatchStatusLabel.Text = "Copying files";
             bool overwrite = OverwriteCheckbox.Checked;
-            _patchManager.CopyGame(overwrite);
-            PatchStatusLabel.Text = "Installing Patch";
-            _patchManager.InstallPatch();
-            PatchStatusLabel.Text = "Done.";
+            _patchManager.onStateUpdate = () => UpdateStatus(_patchManager.State);
+            _patchManager.Init(_configManager.Config.TF2Path,_configManager.Config.TCPath,clean,overwrite);
+        }
+
+        private void UpdateStatus(PatchState state)
+        {
+            if (state == PatchState.DONE)
+            {
+                PatchButton.Enabled = true;
+                OverwriteCheckbox.Enabled = true;
+                CleanPatchBox.Enabled = true;
+                TF2Dir_Button.Enabled = true;
+                TCDir_Button.Enabled = true;
+            }
+            else
+            {
+                PatchButton.Enabled = false;
+                OverwriteCheckbox.Enabled = false;
+                CleanPatchBox.Enabled = false;
+                TF2Dir_Button.Enabled = false;
+                TCDir_Button.Enabled = false;
+            }
+            PatchStatusLabel.Text = state.ToString();
         }
 
 

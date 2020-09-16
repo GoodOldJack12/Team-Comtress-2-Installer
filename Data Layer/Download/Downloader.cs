@@ -1,14 +1,17 @@
+using System;
+using System.ComponentModel;
 using System.Net;
 
 namespace Data_Layer
 {
     public static class Downloader
     {
-        public static void DownloadFile(string url, string targetpath)
+        public static void DownloadFile(string url, string targetpath, Action onComplete = null)
         {
             WebClient webClient = new WebClient();
-            webClient.DownloadFile(url, targetpath);
-
+            webClient.DownloadFileCompleted += (sender, e) => onComplete?.Invoke();
+            webClient.DownloadFileAsync(new Uri(url), targetpath);
         }
+        
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.IO.Compression;
+using System.Threading.Tasks;
 using Microsoft.VisualBasic.FileIO;
 
 namespace Data_Layer.Patcher
@@ -11,7 +12,6 @@ namespace Data_Layer.Patcher
         private string _patchPath;
         private string _gamedir;
         private IReleaseDownloader downloader;
-
         public Patcher(string gamedir,string installDir)
         {
             _installDir = installDir;
@@ -20,22 +20,30 @@ namespace Data_Layer.Patcher
             downloader = new ReleaseDownloader(_patchPath);
         }
 
-        public void Clean()
+
+        public void Clean(Action action)
         {
-            if (Directory.Exists(_installDir))
+            Task.Run(() =>
             {
-                Directory.Delete(_installDir,true);
-                Directory.CreateDirectory(_installDir);
-            }
+                if (Directory.Exists(_installDir))
+                {
+                    Directory.Delete(_installDir, true);
+                    Directory.CreateDirectory(_installDir);
+                }
+                action.Invoke();
+            });
+
         }
 
-        public void DownloadPatch(string version)
-        { 
+        public void DownloadPatch(string version, Action action)
+        {
+            downloader.onComplete = action;
             downloader.DownloadRelease(version);
         }
 
-        public void DownloadPatch()
+        public void DownloadPatch(Action a)
         {
+            downloader.onComplete = a;
             downloader.DownloadLatestRelease();
         }
 
@@ -44,9 +52,14 @@ namespace Data_Layer.Patcher
             ZipFile.ExtractToDirectory(_patchPath,_installDir,true);
         }
 
-        public void CopyGame()
+        public void CopyGame(Action oncomplete)
         {
-            FileSystem.CopyDirectory(_gamedir,_installDir);
+            Task.Run((() =>
+            {
+                FileSystem.CopyDirectory(_gamedir, _installDir);
+                oncomplete.Invoke();
+            }));
         }
+        
     }
 }

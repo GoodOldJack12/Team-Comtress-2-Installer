@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Octokit;
@@ -17,6 +18,8 @@ namespace Data_Layer
             _repository = _client.Repository.Get("mastercomfig", "team-comtress-2").Result.Id;
             _targetPath = targetPath;
         }
+
+        public Action onComplete { get; set; }
 
         public void DownloadRelease(string version)
         {
@@ -41,7 +44,7 @@ namespace Data_Layer
         {
             DownloadRelease(GetLatestRelease());
         }
-
+        
         public void DownloadRelease(Release release)
         {
             ReleaseAsset releaseAsset = release.Assets.SingleOrDefault(a => a.Name == "game_clean.zip");
@@ -53,7 +56,7 @@ namespace Data_Layer
 
         public void Download(string url)
         {
-            Downloader.DownloadFile(url,_targetPath);
+            Downloader.DownloadFile(url,_targetPath,onComplete);
         }
         
         
