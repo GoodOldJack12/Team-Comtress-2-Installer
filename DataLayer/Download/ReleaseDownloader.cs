@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Octokit;
 
-namespace Data_Layer
+namespace DataLayer
 {
     public class ReleaseDownloader : IReleaseDownloader
     {

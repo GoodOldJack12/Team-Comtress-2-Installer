@@ -1,6 +1,6 @@
 using Domain;
 
-namespace Data_Layer
+namespace DataLayer
 {
     public interface IConfigSerializer
     {

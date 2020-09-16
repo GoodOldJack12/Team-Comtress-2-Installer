@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <RootNamespace>Data_Layer</RootNamespace>
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 

@@ -1,7 +1,7 @@
 using System;
 using Domain;
 
-namespace Data_Layer
+namespace DataLayer
 {
     class ConfigDetector : IConfigDetector
     {

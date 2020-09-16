@@ -3,7 +3,7 @@ using System.IO;
 using Domain;
 using YamlDotNet.Serialization;
 
-namespace Data_Layer
+namespace DataLayer
 {
     public class ConfigSerializer : IConfigSerializer
     {

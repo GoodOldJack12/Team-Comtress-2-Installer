@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Net;
 
-namespace Data_Layer
+namespace DataLayer
 {
     public static class Downloader
     {

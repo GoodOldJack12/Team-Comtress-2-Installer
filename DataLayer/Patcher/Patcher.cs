@@ -4,7 +4,7 @@ using System.IO.Compression;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic.FileIO;
 
-namespace Data_Layer.Patcher
+namespace DataLayer.Patcher
 {
     public class Patcher : IPatcher
     {

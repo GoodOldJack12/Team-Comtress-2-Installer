@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Octokit;
 
-namespace Data_Layer
+namespace DataLayer
 {
     public interface IReleaseDownloader
     {

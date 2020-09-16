@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic", "Business Logic\BusinessLogic.csproj", "{14E754A4-4892-4EAE-8371-95CC3E9A1B9D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data Layer", "Data Layer\Data Layer.csproj", "{F0D151A3-8B41-4FA2-8CF3-FF12B55D7B8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\DataLayer.csproj", "{F0D151A3-8B41-4FA2-8CF3-FF12B55D7B8A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{E58CC920-3E31-4329-9777-2553857610D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Team Comtress Installer", "UI_WF\Team Comtress Installer.csproj", "{5EF60BD3-8C0A-49F2-A0CC-DC4FCA4BAA55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamComtressInstaller", "UI_WF\TeamComtressInstaller.csproj", "{5EF60BD3-8C0A-49F2-A0CC-DC4FCA4BAA55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

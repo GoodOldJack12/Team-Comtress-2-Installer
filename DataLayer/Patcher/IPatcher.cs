@@ -1,6 +1,6 @@
 using System;
 
-namespace Data_Layer.Patcher
+namespace DataLayer.Patcher
 {
     public interface IPatcher
     {
