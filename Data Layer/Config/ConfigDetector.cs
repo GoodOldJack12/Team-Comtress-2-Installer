@@ -29,7 +29,7 @@ namespace Data_Layer
         {
             return new Config()
             {
-                TCPath = "D:\\Team Fortress 2 - Fix",
+                TCPath = "Please select a path!",
                 TF2Path = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Team Fortress 2"
             };
         }
