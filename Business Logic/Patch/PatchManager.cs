@@ -6,10 +6,12 @@ namespace Team_Comtress_Updater.Patch
     {
         private IPatcher _patcher;
         private string _version;
+        private string _installdir;
 
         public void Init(string gamedir, string installdir)
         {
             _patcher = new Patcher(gamedir,installdir);
+            _installdir = installdir;
         }
 
         public void Init(string gamedir, string installdir, string version) 
@@ -23,9 +25,13 @@ namespace Team_Comtress_Updater.Patch
             _patcher.Clean();
         }
 
-        public void CopyGame()
+        public void CopyGame(bool overwrite = false)
         {
-            _patcher.CopyGame();
+            //Only copy files if not already present, OR if overwrite is true
+            if (!Validator.IsGameDir(_installdir) || overwrite)
+            {
+                _patcher.CopyGame();
+            }
         }
 
         public void InstallPatch()

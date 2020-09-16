@@ -75,6 +75,9 @@ namespace WinFormsApp1
                 {
                     SetSuccess(TCDir_Label,path);
                     _configManager.Config.TCPath = path;
+                    //Enable the overwrite option if the directory already contains game files
+                    OverwriteCheckbox.Enabled = Validator.IsGameDir(path);
+                    OverwriteCheckbox.Checked = false;
                 }
             }
         }
@@ -89,7 +92,8 @@ namespace WinFormsApp1
                 _patchManager.Clean();
             }
             PatchStatusLabel.Text = "Copying files";
-            _patchManager.CopyGame();
+            bool overwrite = OverwriteCheckbox.Checked;
+            _patchManager.CopyGame(overwrite);
             PatchStatusLabel.Text = "Installing Patch";
             _patchManager.InstallPatch();
             PatchStatusLabel.Text = "Done.";
@@ -123,5 +127,22 @@ namespace WinFormsApp1
             base.OnClosed(e);
             _configManager.SaveConfig();
         }
+
+
+        private void CleanPatchBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CleanPatchBox.Checked)
+            {
+                OverwriteCheckbox.Checked = true;
+                OverwriteCheckbox.Enabled = false;
+            }
+            else
+            {
+                OverwriteCheckbox.Checked = false;
+                OverwriteCheckbox.Enabled = true;
+            }
+            
+        }
+        
     }
 }
