@@ -113,7 +113,7 @@ namespace WinFormsApp1
             this.TCDir_Label_Label.Name = "TCDir_Label_Label";
             this.TCDir_Label_Label.Size = new System.Drawing.Size(77, 19);
             this.TCDir_Label_Label.TabIndex = 5;
-            this.TCDir_Label_Label.Text = "TFC Path";
+            this.TCDir_Label_Label.Text = "TC2 Path";
             this.TCDir_Label_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TCDir_Label
@@ -210,11 +210,13 @@ namespace WinFormsApp1
             this.OverwriteCheckbox.Text = "Overwrite?";
             this.OverwriteTooltip.SetToolTip(this.OverwriteCheckbox, "Copy TF2 files even if they already exist, overwriting the original files");
             this.OverwriteCheckbox.UseVisualStyleBackColor = true;
+            this.OverwriteCheckbox.Visible = false;
             // 
             // TFCUpdater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.OverwriteCheckbox);
             this.Controls.Add(this.groupBox1);
@@ -222,8 +224,9 @@ namespace WinFormsApp1
             this.Controls.Add(this.PatchButton);
             this.Controls.Add(this.Directories_Box);
             this.Controls.Add(this.Title_Label);
+            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "TFCUpdater";
-            this.Text = "TFCUpdater";
+            this.Text = "Team Comtress 2 Installer";
             this.Directories_Box.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
