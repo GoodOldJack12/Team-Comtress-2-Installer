@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data Layer", "Data Layer\Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{E58CC920-3E31-4329-9777-2553857610D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI_WF", "UI_WF\UI_WF.csproj", "{5EF60BD3-8C0A-49F2-A0CC-DC4FCA4BAA55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Team Comtress Installer", "UI_WF\Team Comtress Installer.csproj", "{5EF60BD3-8C0A-49F2-A0CC-DC4FCA4BAA55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
