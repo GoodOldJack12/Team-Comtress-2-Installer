@@ -210,7 +210,6 @@ namespace WinFormsApp1
             this.OverwriteCheckbox.Text = "Overwrite?";
             this.OverwriteTooltip.SetToolTip(this.OverwriteCheckbox, "Copy TF2 files even if they already exist, overwriting the original files");
             this.OverwriteCheckbox.UseVisualStyleBackColor = true;
-            this.OverwriteCheckbox.Visible = false;
             // 
             // TFCUpdater
             // 
