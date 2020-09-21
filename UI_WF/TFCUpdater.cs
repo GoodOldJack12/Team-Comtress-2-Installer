@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Data_Layer.Patcher;
+using BusinessLogic;
 using Domain;
 using Team_Comtress_Updater;
 using Team_Comtress_Updater.Patch;

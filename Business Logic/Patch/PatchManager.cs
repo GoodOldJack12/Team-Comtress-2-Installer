@@ -1,5 +1,5 @@
 using System;
-using Data_Layer.Patcher;
+using BusinessLogic;
 using DataLayer.Patcher;
 
 namespace Team_Comtress_Updater.Patch

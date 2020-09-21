@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using BusinessLogic;
 using DataLayer;
 using Domain;
 
@@ -10,9 +11,16 @@ namespace Team_Comtress_Updater
         private IConfigSerializer _serializer;
         private string configPath;
         public Config Config { get; set; }
-        public ConfigManager()
+        public ConfigManager(string configpath = null)
         {
-            configPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "TCUpdater");
+            if (configpath == null)
+            {
+                this.configPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "TCUpdater");
+            }
+            else
+            {
+                this.configPath = configpath;
+            }
             _serializer = new ConfigSerializer(configPath);
             Config = GetConfig();
         }

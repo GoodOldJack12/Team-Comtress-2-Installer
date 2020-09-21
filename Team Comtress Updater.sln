@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamComtressInstaller", "UI_WF\TeamComtressInstaller.csproj", "{5EF60BD3-8C0A-49F2-A0CC-DC4FCA4BAA55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCInstaller_CLI", "TCInstaller_CLI\TCInstaller_CLI.csproj", "{5CEACF86-D149-4A86-84E3-5E31593A88DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5EF60BD3-8C0A-49F2-A0CC-DC4FCA4BAA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EF60BD3-8C0A-49F2-A0CC-DC4FCA4BAA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EF60BD3-8C0A-49F2-A0CC-DC4FCA4BAA55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CEACF86-D149-4A86-84E3-5E31593A88DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CEACF86-D149-4A86-84E3-5E31593A88DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CEACF86-D149-4A86-84E3-5E31593A88DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CEACF86-D149-4A86-84E3-5E31593A88DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

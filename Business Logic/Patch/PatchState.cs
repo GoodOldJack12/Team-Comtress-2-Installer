@@ -1,4 +1,4 @@
-namespace Data_Layer.Patcher
+namespace Team_Comtress_Updater.Patch
 {
     public enum PatchState
     {

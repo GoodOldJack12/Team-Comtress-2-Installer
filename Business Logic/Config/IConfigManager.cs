@@ -1,6 +1,6 @@
 using Domain;
 
-namespace Team_Comtress_Updater
+namespace BusinessLogic
 {
     public interface IConfigManager
     {
