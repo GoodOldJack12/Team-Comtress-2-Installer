@@ -1,5 +1,6 @@
 # Team-Comtress-2-Installer
 An application that installs or updates [Team Comtress 2](https://github.com/mastercomfig/team-comtress-2)
+
 **Confused? Click [here](#Install-guide)**
 ## Features
 * Automatically downloading the latest TC2 release
