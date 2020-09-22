@@ -1,5 +1,7 @@
 using System;
+using System.Runtime.InteropServices;
 using Domain;
+using Team_Comtress_Updater;
 
 namespace DataLayer
 {
@@ -27,10 +29,25 @@ namespace DataLayer
 
         private Config GetHardcodedTestConfig()
         {
+            string windows64_tf2 = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Team Fortress 2";
+            string windows32_tf2 = "C:\\Program Files\\Steam\\steamapps\\common\\Team Fortress 2";
+            string tf2dir = "Please select a path!";
+            
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                if (Validator.IsGameDir(windows64_tf2))
+                {
+                    tf2dir = windows64_tf2;
+                }else if (Validator.IsGameDir(windows32_tf2))
+                {
+                    tf2dir = windows32_tf2;
+                }
+            }
+
             return new Config()
             {
                 TCPath = "Please select a path!",
-                TF2Path = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Team Fortress 2"
+                TF2Path = tf2dir
             };
         }
     }
