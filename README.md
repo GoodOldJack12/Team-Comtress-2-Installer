@@ -1,3 +1,6 @@
+# ARCHIVED
+This repo is now archived since Team Comtress has its own launcher: https://github.com/mastercomfig/tc2
+
 # Team-Comtress-2-Installer
 An application that installs or updates [Team Comtress 2](https://github.com/mastercomfig/team-comtress-2)
 
